@@ -8,10 +8,20 @@
 <body>
     <h1>Add</h1>
     <table>
-        <form action="{% url 'food_impression:add' %}" method="post">
-        {% csrf_token %}
-        {{ form.as_table }}
-        <tr><td></td><td><input type="submit" value="送信"></td></tr>
+        <form action="" method="POST" name="add_company" id="add_form">
+            {% csrf_token %}
+            {{ company_form.as_table }}
+            <tr><td></td><td><button type="submit" class="btn btn-primary" name="company">Add Company</button></td></tr>
+        </form>
+        <form action="" method="POST" name="add_kind" id="add_form">
+            {% csrf_token %}
+            {{ kind_form.as_table }}
+            <tr><td></td><td><button type="submit" class="btn btn-primary" name="add_kind">Add Kind</button></td></tr>
+        </form>
+        <form action="{% url 'food_impression:add' %}" method="POST" name="add_food" id="add_form">
+            {% csrf_token %}
+            {{ food_form.as_table }}
+            <tr><td></td><td><button type="submit" class="btn btn-primary" name="add_food">Add Food</button></td></tr>
         </form>
     </table>
 </body>
