@@ -1,8 +1,13 @@
-<h1>{{ food.name }}</h1>
-<table class="table">
-    <tr><td>Company</td><td>{{food.company}}</td></tr>
-    <tr><td>Kind</td><td>{{food.kind}}</td></tr>
-    <tr><td>Taste</td><td>{{food.taste}}</td></tr>
-    <tr><td>Value</td><td>{{food.value}}</td></tr>
-    <tr><td>Remark</td><td>{{food.remark}}</td></tr>
-</table>
+{% extends "food_impression/base.html" %}
+{% load static %}
+
+{% block title %}{{ food.name }}{% endblock title %}
+{% block content %}
+    <table class="table">
+        <tr><td>Company</td><td>{{food.company}}</td></tr>
+        <tr><td>Kind</td><td>{{food.kind}}</td></tr>
+        <tr><td>Taste</td><td>{{food.taste}}</td></tr>
+        <tr><td>Value</td><td>{{food.value}}</td></tr>
+        <tr><td>Remark</td><td>{{food.remark}}</td></tr>
+    </table>
+{% endblock content %}
