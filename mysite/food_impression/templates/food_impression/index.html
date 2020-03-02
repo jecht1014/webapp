@@ -1,0 +1,31 @@
+
+{% extends "food_impression/base.html" %}
+{% load static %}
+
+{% block title %}index{% endblock title %}
+{% block content %}
+    <li><a href="{% url 'food_impression:add' %}">add</a></li>
+    {% if latest_food_list %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>kind</th>
+                <th>value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for food in latest_food_list %}
+                <tr>
+                    <th><a href="{% url 'food_impression:detail' food.id %}">{{ food.name }}</a></th>
+                    <th>{{ food.kind }}</th>
+                    <th>{{ food.value }}</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+{% endblock content %}
